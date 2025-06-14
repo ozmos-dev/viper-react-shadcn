@@ -1,8 +1,8 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
-  "name": "ozmos/viper-vue-shadcn",
+  "name": "ozmos/viper-react-shadcn",
   "type": "project",
-  "description": "Laravel starter kit for Viper using shadcn-vue components",
+  "description": "Laravel starter kit for Viper using react and shadcn components",
   "keywords": [
     "laravel",
     "framework"
