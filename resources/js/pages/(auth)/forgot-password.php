@@ -1,16 +1,18 @@
 <?php
 
-use Ozmos\Viper\Attrs;
+use Ozmos\Viper\Attrs\Name;
+use Ozmos\Viper\Attrs\Action;
 use App\Data\Requests\ForgotPasswordRequest;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
 
-return new #[Attrs\Name('password.request')] class {
-  #[Attrs\Action]
+return new #[Name('password.request')] class {
+  #[Action]
   public function sendResetLink(ForgotPasswordRequest $request)
   {
-    $status = \Password::sendResetLink($request->toArray());
+    $status = Password::sendResetLink($request->toArray());
 
-    if ($status === \Password::ResetLinkSent) {
+    if ($status === Password::ResetLinkSent) {
       return ['message' => __($status)];
     }
 

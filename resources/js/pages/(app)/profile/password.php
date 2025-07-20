@@ -1,17 +1,16 @@
 <?php
 
+use Ozmos\Viper\Attrs\Action;
+use App\Data\Requests\ChangePasswordRequest;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
 return new class {
-  #[\Ozmos\Viper\Attrs\Action]
-  public function resetPassword(
-    \App\Data\Requests\ChangePasswordRequest $request
-  ) {
-    if (
-      !\Illuminate\Support\Facades\Hash::check(
-        $request->old_password,
-        request()->user()->password
-      )
-    ) {
-      throw \Illuminate\Validation\ValidationException::withMessages([
+  #[Action]
+  public function resetPassword(ChangePasswordRequest $request)
+  {
+    if (!Hash::check($request->old_password, request()->user()->password)) {
+      throw ValidationException::withMessages([
         'old_password' => ['Incorrect password'],
       ]);
     }

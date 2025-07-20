@@ -1,23 +1,25 @@
 <?php
 
-return new #[\Ozmos\Viper\Attrs\Title('Home')] #[
-  \Ozmos\Viper\Attrs\Name('home')
-]
-class {
-  #[\Ozmos\Viper\Attrs\Prop]
+use Ozmos\Viper\Attrs\Title;
+use Ozmos\Viper\Attrs\Name;
+use Ozmos\Viper\Attrs\Prop;
+use Ozmos\Viper\Attrs\Action;
+
+return new #[Title('Home')] #[Name('home')] class {
+  #[Prop]
   public function serverTime(): string
   {
     return now()->toIso8601String();
   }
 
-  #[\Ozmos\Viper\Attrs\Prop(lazy: true)]
+  #[Prop(lazy: true)]
   public function lazyServerTime(): string
   {
     sleep(1);
     return now()->toIso8601String();
   }
 
-  #[\Ozmos\Viper\Attrs\Action]
+  #[Action]
   public function formsTest()
   {
     // allow loading indicator to show

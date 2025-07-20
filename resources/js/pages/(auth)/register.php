@@ -1,11 +1,12 @@
 <?php
 
-use Ozmos\Viper\Attrs;
+use Ozmos\Viper\Attrs\Name;
+use Ozmos\Viper\Attrs\Action;
 use App\Data\Requests\RegisterRequest;
 use App\Models\User;
 
-return new #[Attrs\Name('register')] class {
-  #[Attrs\Action]
+return new #[Name('register')] class {
+  #[Action]
   public function register(RegisterRequest $request)
   {
     $user = User::create($request->toArray());
