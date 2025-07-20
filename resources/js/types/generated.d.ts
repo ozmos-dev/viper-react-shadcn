@@ -34,13 +34,13 @@ email: string;
 };
 }
 declare namespace ViperGen {
-export type AppGroupHome = { props: {user: App.Data.UserData;serverTime: string;lazyServerTime: string}; actions: {logout: { args: any, result: any };confirmPassword: { args: any, result: any };formsTest: { args: any, result: any }}; params: {}; };
-export type AppGroupLayout = { props: {user: App.Data.UserData}; actions: {logout: { args: any, result: any };confirmPassword: { args: any, result: any }}; params: {}; };
-export type AppGroupProfileIndex = { props: {user: App.Data.UserData}; actions: {logout: { args: any, result: any };confirmPassword: { args: any, result: any };updateUser: { args: App.Data.Requests.UpdateProfileRequest, result: any };deleteUser: { args: any, result: any }}; params: {}; };
-export type AppGroupProfilePassword = { props: {user: App.Data.UserData}; actions: {logout: { args: any, result: any };confirmPassword: { args: any, result: any };resetPassword: { args: App.Data.Requests.ChangePasswordRequest, result: any }}; params: {}; };
-export type AuthGroupForgotPassword = { props: {}; actions: {sendResetLink: { args: App.Data.Requests.ForgotPasswordRequest, result: any }}; params: {}; };
+export type AppGroupHome = { props: {user: { result: App.Data.UserData; bindings: [] };serverTime: { result: string; bindings: [] };lazyServerTime: { result: string; bindings: [] }}; actions: {logout: { args: any; result: any; bindings: []; };confirmPassword: { args: any; result: any; bindings: []; };formsTest: { args: any; result: any; bindings: []; }}; params: {}; };
+export type AppGroupLayout = { props: {user: { result: App.Data.UserData; bindings: [] }}; actions: {logout: { args: any; result: any; bindings: []; };confirmPassword: { args: any; result: any; bindings: []; }}; params: {}; };
+export type AppGroupProfileIndex = { props: {user: { result: App.Data.UserData; bindings: [] }}; actions: {logout: { args: any; result: any; bindings: []; };confirmPassword: { args: any; result: any; bindings: []; };updateUser: { args: App.Data.Requests.UpdateProfileRequest; result: any; bindings: []; };deleteUser: { args: any; result: any; bindings: []; }}; params: {}; };
+export type AppGroupProfilePassword = { props: {user: { result: App.Data.UserData; bindings: [] }}; actions: {logout: { args: any; result: any; bindings: []; };confirmPassword: { args: any; result: any; bindings: []; };resetPassword: { args: App.Data.Requests.ChangePasswordRequest; result: any; bindings: []; }}; params: {}; };
+export type AuthGroupForgotPassword = { props: {}; actions: {sendResetLink: { args: App.Data.Requests.ForgotPasswordRequest; result: any; bindings: []; }}; params: {}; };
 export type AuthGroupLayout = { props: {}; actions: {}; params: {}; };
-export type AuthGroupLogin = { props: {}; actions: {login: { args: App.Data.Requests.LoginRequest, result: any }}; params: {}; };
-export type AuthGroupRegister = { props: {}; actions: {register: { args: App.Data.Requests.RegisterRequest, result: any }}; params: {}; };
-export type AuthGroupResetPasswordTokenParam = { props: {email: string}; actions: {resetPassword: { args: App.Data.Requests.ResetPasswordRequest, result: any }}; params: {token: string}; };
+export type AuthGroupLogin = { props: {}; actions: {login: { args: App.Data.Requests.LoginRequest; result: any; bindings: []; }}; params: {}; };
+export type AuthGroupRegister = { props: {}; actions: {register: { args: App.Data.Requests.RegisterRequest; result: any; bindings: []; }}; params: {}; };
+export type AuthGroupResetPasswordTokenParam = { props: {email: { result: string; bindings: [] }}; actions: {resetPassword: { args: App.Data.Requests.ResetPasswordRequest; result: any; bindings: []; }}; params: {token: string}; };
 }
