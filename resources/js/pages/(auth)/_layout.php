@@ -1,3 +1,5 @@
 <?php
 
-return new #[\Ozmos\Viper\Attrs\Middleware(['guest'])] class {};
+use Ozmos\Viper\Attrs\Middleware;
+
+return new #[Middleware(['guest'])] class {};
